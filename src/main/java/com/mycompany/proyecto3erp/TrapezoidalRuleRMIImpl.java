@@ -29,7 +29,7 @@ public class TrapezoidalRuleRMIImpl extends UnicastRemoteObject implements Trape
     public double N=0;
     public int NumThreads=0;
     public String Tipo="";
-    public boolean Flag=true;
+    public boolean Flag = true;
     public boolean Flag2 = true;
     public Holder holder;
     
@@ -77,7 +77,7 @@ public class TrapezoidalRuleRMIImpl extends UnicastRemoteObject implements Trape
         
         resultado = aux1/clientes.size();
         System.out.println(resultado);
-        Flag2=false;
+        Flag2 = false;
         aux1=0;
 
 
@@ -189,8 +189,8 @@ public class TrapezoidalRuleRMIImpl extends UnicastRemoteObject implements Trape
 
      @Override
      public double resultado(){
-         Flag=true;
-         Flag2=true;
+         Flag = true;
+         Flag2 = Flag;
          return resultado;
      }
     

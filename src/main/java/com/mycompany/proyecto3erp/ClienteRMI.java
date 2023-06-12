@@ -105,7 +105,7 @@ public class ClienteRMI extends JFrame implements ActionListener  {
             remoteCalculator = (TrapezoidalRuleRMI) registry.lookup("TrapezoidalRuleRMI");
             remoteCalculator.agregar(remoteCalculator);
             System.out.println("Conexion exitosa");
-            textArea.setText("CLIENTE \nCONECTADO");
+            textArea.setText("ESPERANDO AL MASTER");
 
         } catch (Exception e) {
             System.err.println("Error send the message: " + e.toString());
@@ -126,9 +126,9 @@ public class ClienteRMI extends JFrame implements ActionListener  {
     }
      
     public void chambear(){
-
+    textArea.setText("CHAMBEANDO");
         try {
-            textArea.setText("CHAMBEANDO");
+            
             holder = remoteCalculator.aux();
             System.out.println(holder);
             double n = holder.Inter;
@@ -149,10 +149,11 @@ public class ClienteRMI extends JFrame implements ActionListener  {
     }
     
     public void actionPerformed(ActionEvent e){
-
-        aux1=true;
-        while(aux1){
+        
+        //aux1=true;
+        while(true){
           try {
+            
             if(!remoteCalculator.flag()){ 
                 chambear();
                 break;
